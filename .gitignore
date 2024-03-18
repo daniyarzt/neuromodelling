@@ -1,0 +1,11 @@
+allendata/
+converted/
+data_converted/
+minisdk/
+download_test.ipynb
+example_allensdk.ipynb 
+Notes.md
+/download_test.ipynb
+/example_allensdk.ipynb
+/.DS_Store
+natural_scenes.pdf
