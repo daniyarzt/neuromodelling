@@ -1,0 +1,728 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Neuroscience project</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="492176a9-a7e0-444e-8f37-4bbae8d29919" class="page sans"><header><h1 class="page-title">Neuroscience project</h1><p class="page-description"></p></header><div class="page-body"><h2 id="0fdc867f-f34b-4ccc-8909-8e172ba93037" class="">example_allensdk.ipynb tutorial</h2><p id="a494b1f2-ba7f-4ece-b5b0-3637975e02d6" class="">
+</p><h3 id="ac82cdb7-bba6-4e53-8f86-c0a339b3d6a4" class="">Import libraries and prepare data:</h3><p id="75cc8d49-b437-42d3-83a6-7a4c361dcc56" class="">
+</p><p id="0cfaf615-7a3a-47fa-86ce-ed9b9a0524d3" class="">The command <code>get_session_table()</code> loads a Pandas dataframe with the information about all the sessions. The ID identifies the session, and then we have <code>session_type</code> (which kind of experiment it was) and data about the animal, such as <code>age_in_days</code> or its <code>full_genotype</code>. We do a sneak peek to the first rows of the table by invoking its <code>.head()</code>.</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="47d1b8e1-340f-48a6-8db8-481a56b9f0f3" class="code"><code class="language-Python">sessions = cache.get_session_table() #Returns a Pandas dataframe
+sessions.head() #Sneak peek of the table</code></pre><p id="d936fe40-0b5d-4da6-8657-b5e6d757c999" class="">We query the files with 4 functions:</p><ul id="8e5a67ae-84a5-4e4c-81bb-aee812b94fd7" class="bulleted-list"><li style="list-style-type:disc"><code>get_probes()</code>: each row is a physical probe from the recording session, contains sampling rates, number of recording etc. We don&#x27;t care though as data is preprocessed.</li></ul><ul id="afa46290-6d21-4a1a-8cfe-20d2cd9f8617" class="bulleted-list"><li style="list-style-type:disc"><code>get_channels()</code>: contains info about the recording channels, most importantly coordinates of the channel in physical space. But data already contains which region the neurons belong to so we probably don’t need this info</li></ul><ul id="b313016a-3a5b-43ae-8b71-c6f3a90adbfc" class="bulleted-list"><li style="list-style-type:disc"><code>get_units()</code>: unit == potential neuron. Contains info on all unites across all sessions including waveform shape (how the spikes look), firing rate and quality metrics. function doesn’t provide all potential units but rather filters out, giving only the ones scoring good quality metrics</li></ul><ul id="15f2f0ba-2926-410d-93ab-fabcc46d08e0" class="bulleted-list"><li style="list-style-type:disc"><code>get_session_table()</code>: MVP, each ID corresponds to a mouse doing a full experiment. We can check data about the specimen, like age or sex, number of recorded units, and names of the recorded areas.</li></ul><p id="de98ee28-1f20-4189-b3d1-19a9c1f161d7" class="">Quality metrics:</p><ul id="f31ac081-404e-4664-8b98-0cebb5c21f19" class="bulleted-list"><li style="list-style-type:disc"><code>isi_violations</code> &lt; 0.5</li></ul><ul id="1f111f45-3aef-4bc8-9957-860b26e57824" class="bulleted-list"><li style="list-style-type:disc"><code>amplitude_cutoff</code> &lt; 0.1</li></ul><ul id="9b8afcd4-84a2-4a77-a95f-df027852de3b" class="bulleted-list"><li style="list-style-type:disc"><code>presence_ratio</code> &gt; 0.9</li></ul><p id="630273a0-66de-4245-a033-1b731a4fc842" class="">Number of units (unfiltered): 99180 (by setting thresholds to np.inf)<br/>Number of units (filtered): 40010<br/></p><p id="118a67f7-4599-4025-aeba-a92dafae1a39" class="">
+</p><p id="1d3b3988-bafd-4ccb-a4ff-adea0123d393" class="">Finally, the units table contains information about every unit in the dataset, no matter the session or mouse they’re located in. We can get all units in a session using <code>ecephys_session_id</code> or check to which area does the unit belong to with <code>ecephys_structure_acronym</code>, as well as other neuron properties..</p><p id="760019d7-08e2-43df-93d9-d8e4d6ee8632" class="">
+</p><h2 id="acad6883-0776-4475-b4ee-40aedb0d2096" class="">Working with a sesssion</h2><p id="df23be1f-5495-4255-8f83-7edfb54735e4" class="">
+</p><p id="3ef4dbaa-9c81-44b7-9f0c-3c291c8fff4c" class="">Load the index of sessions with <code>get_session_table()</code>. Then we can filter it to find interesting experiments. </p><p id="c3679a00-e280-4c9c-ac0f-debb38a4acee" class="">Two kinds of sessions: <code>functional_connectivity</code> and <code>brain_observatory</code>. Check using <code>session_type</code> .</p><p id="2ef52b99-d18d-46aa-b53c-b7c1f7d05a88" class="">example, female mice from the brain observatory:</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="a2ebeca7-fbf0-44e3-8787-74043cb4cd73" class="code"><code class="language-Python">female_sessions = sessions[(sessions.sex == &quot;F&quot;) &amp; (sessions.session_type == &quot;brain_observatory_1.1&quot;)]
+female_sessions.head() #See our sessions</code></pre><p id="f80f8904-f771-40d8-b2b7-a068ad7a7ddf" class="">
+</p><p id="106672ce-5873-4100-9b9f-5208b29fa3e2" class="">We can consider any session, just need its id to access it.</p><p id="22f119bc-ac27-4ca3-9f40-bc2f3ec41e5c" class="">The data of the session is downloaded using <code>cache.get_sessions_data(id)</code> . The data is filtered to comply with the quality metrics.</p><p id="982f2a13-55c7-4a52-aa40-e2f6d1593583" class="">To load without restriction: <code>cache.get_session_data(id, isi_violations_maximum = np.inf, amplitude_cutoff_maximum = np.inf, presence_ratio_minimum = -np.inf)</code></p><p id="6d02ff96-2770-4748-88e8-f9e7236387aa" class="">One session (or a pair of them, depending on your research question) should be enough for your project.</p><p id="6cf140ff-9cf3-4579-94bd-733afca588b4" class="">
+</p><p id="14cfde80-f163-4c53-aa60-9f4714d3f0f5" class="">Example:  Create a variable mask to filter sessions that have more than 600 units including the Thalamus (TH).</p><p id="3f145ce0-d0a1-4827-9009-b1ef3a82aedf" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="3aec4c0b-ac4f-4fac-a5f9-bd5c77a125cf" class="code"><code class="language-Python">mask = (sessions[&quot;unit_count&quot;] &gt; 600) &amp; ([&#x27;TH&#x27; in area for area in sessions[&quot;ecephys_structure_acronyms&quot;]])</code></pre><p id="69c61127-91c4-492e-84cc-f1a0802ea2ee" class="">
+</p><p id="251a6f01-5ec1-4de3-a4fd-ef8311d17401" class="">Computer the number of units in the thalamus for each of the sessions above:</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="0c08d64d-6964-486f-b845-ff336a7686d8" class="code"><code class="language-Python">#Default, filtered data
+units = cache.get_units() 
+for sid in sessions[mask].index.values:
+    maskunits = (units[&quot;ecephys_session_id&quot;] == sid) &amp; (&quot;TH&quot;==units[&quot;ecephys_structure_acronym&quot;])
+    units_in_th = len(units[maskunits])
+    print(f&quot;Session {sid} has {units_in_th} units in TH&quot;)</code></pre><p id="0109e9f4-a0f8-4d3c-aadd-b637f38b4be0" class="">
+</p><p id="bfff6656-da07-4051-9824-cebe08b02286" class="">Download the data from the session we want, pretty straightforward:</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="fcf299da-abee-4b0e-843e-3a207cb9985f" class="code"><code class="language-Python">#Grab our (filtered) data from our favorite session. We take a female mice with nice unit count
+session_id = 798911424 
+oursession = cache.get_session_data(session_id, timeout=3000)</code></pre><p id="ddbc16a5-463c-4f3b-9cbf-68d2d9c866cf" class="">
+</p><h2 id="27b9606c-ea18-45ea-b160-e1ec2bd8d391" class="">Playing with the Data</h2><p id="358b578e-92e5-454d-a11c-6a5b94e28b36" class="">
+</p><p id="53d69cc3-535d-4382-b202-ae36731e5574" class="">We found a session and loaded the data. We can check how many neurons in each area using <code>oursession.units()</code> and <code>oursession.units[&quot;ecephys_structure_acronym&quot;].value_counts()</code></p><p id="9b6e28d4-bf94-46ec-ac86-1a2d84d77128" class="">
+</p><p id="76c46597-0a88-4e50-be0d-7028c1cce2f7" class="">We choose VISAM as it has the most units. The data is stored in spike times, i.e for each unit we have the times at which we detected a spike. We can access them with <code>spike_times</code> which gives us a dictionary, keys are the unit ID,<code>oursession.spike_times</code></p><p id="3b270ee1-5310-499e-8b5b-f9d61c063559" class="">Then we can use the unit ID to get the array of the spiking times. The list is a sequence of strictly increasing times at which we have spikes.</p><p id="1db20b4a-1486-4cf7-ae31-d9ae7ad46f85" class="">
+</p><p id="1f557fe4-fbb0-4134-b244-2509915baaf2" class="">We will filter the neurons there and produce what it&#x27;s called a &quot;raster plot&quot;, in which X-axis are the spiking times and Y-axis are the neuron indices.</p><p id="98008218-5a06-4139-bb99-378c52c7abf2" class="">Uses the function <code>get_spikes_in_time_interval(session, regionstr, time_start, time_end)</code></p><p id="64102d36-88e3-4951-8fdf-ac83b0abf4f5" class="">We specify the regions we want, we get the neurons in the region. Then we consider the spikes in the specified time interval to generate our raster plot. </p><p id="b30fbad4-f17d-4dd6-9d89-40f2fae5b7e8" class="">
+</p><p id="2b65faf7-96e6-422a-a15a-dcb0c931e03f" class="">Now we look at the stimuli table.</p><p id="55e2a8e2-9cca-4b64-aac5-500a9ee6aac3" class="">The name of the stimuli can be found in the <code>oursession.metadata[&quot;stimulus_names&quot;]</code> variable or in the linked cheatsheet and then loaded <code>get_stimulus_table(sti_name)</code>.</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="827b79c5-869d-43d2-be06-3ab4f01ad940" class="code"><code class="language-Python">oursession.metadata[&quot;stimulus_names&quot;]</code></pre><p id="85522d83-d4a9-40fd-a982-441d9ed37d8d" class="">The list of stimuli are: [&#x27;spontaneous&#x27;, &#x27;gabors&#x27;, &#x27;flashes&#x27;, &#x27;drifting_gratings&#x27;, &#x27;natural_movie_three&#x27;, &#x27;natural_movie_one&#x27;, &#x27;static_gratings&#x27;, &#x27;natural_scenes&#x27;, &#x27;drifting_gratings_contrast&#x27;]</p><p id="96d164fd-e6ba-4afd-a226-0a29bad0dc97" class="">Example: </p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="fd47cc68-8d17-4362-a676-d71581338e8e" class="code"><code class="language-Python">flashes = oursession.get_stimulus_table(&quot;flashes&quot;)</code></pre><p id="bf336e67-ecd8-44f6-8e0b-6d43db11c885" class="">Example:</p><p id="c1cc22c2-9c77-4574-b322-31d5ade5252e" class="">Static Gratings table: filter out based on angles, 0 and 90.</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="41ee2a06-67a4-4e7b-b146-5f17179d46cf" class="code"><code class="language-Python">gratings = oursession.get_stimulus_table(&quot;static_gratings&quot;)
+
+gra0 = gratings[gratings[&quot;orientation&quot;] == 0]
+gra90 = gratings[gratings[&quot;orientation&quot;] == 90]</code></pre><p id="c6ec5e62-33be-4b33-88fc-c414dcd8b6e2" class="">We can also count the number of flashes presented to the mouse in a given region.</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="e6fa6015-4faa-48e5-a15e-9289fc03d73b" class="code"><code class="language-Python">#Get the ids of our desired region
+visam_ids = oursession.units[oursession.units[&quot;ecephys_structure_acronym&quot;] == &quot;VISam&quot;].index.values
+
+#Each stimulus has its own id too
+#Let&#x27;s filter the flashes
+flashes_ids = flashes.index.values
+
+#Get the spike times of our VISam neurons making t=0 at the 
+#moment at which the flashes start!
+visam_flash_spk = oursession.presentationwise_spike_times(
+    stimulus_presentation_ids=flashes_ids,
+    unit_ids=visam_ids
+)
+
+#Observe that flashes are presented to the mice several times. How many?
+#nunique counts number of unique values in a column in Pandas...
+n = visam_flash_spk[&quot;stimulus_presentation_id&quot;].nunique()
+print(f&quot;Mouse saw flashes {n} times&quot;)</code></pre><p id="6a9ea4dd-6cd3-4745-96f3-0d6336a4dcac" class="">
+</p><p id="e37358de-7bf8-40e3-9b7e-7fe42b1049c4" class="">We can also plot the average firing rate of neurons during the first flash (or first n flashes)</p><p id="08daec90-40bf-43fb-bf92-fba156ce627d" class="">procedure: </p><ul id="34aded46-1672-4e62-8919-fb898b2509fa" class="bulleted-list"><li style="list-style-type:disc">get the ids of the first n flashes</li></ul><ul id="35deb785-73ba-445b-a312-8c056e26064d" class="bulleted-list"><li style="list-style-type:disc">obtain all the rows in the spike time table which have the stimulus presentation indices we want.</li></ul><ul id="3f30028e-b2a2-47a8-877e-2695eb3e62f5" class="bulleted-list"><li style="list-style-type:disc">compute the total firing rate, which is number of spikes/ unit time. We time bin all neurons without looking at who fired. The bin time is calculated using the average inter event interval of the spike times. bin time = 2 * av_iei</li></ul><ul id="7b25470f-f992-4195-8092-5fdbc84d4b03" class="bulleted-list"><li style="list-style-type:disc">the firing rate is the number of spikes which take place during each bin time. we filter the spikes which happened outside the flash time intervals.</li></ul><ul id="39430b65-1726-4dc6-98a4-41026ec10deb" class="bulleted-list"><li style="list-style-type:disc">display the firing rates using a graph.</li></ul><p id="8b555125-edc6-4677-90a7-fb43d38490a4" class="">We can also plot the same graph but remove the restriction of showing the firing rates within the flash intervals.  We just get all the spikes but without filtering by stimulus presentation indices.</p><p id="63b4e35f-5596-4df6-b163-c2d2848b1cbd" class="">
+</p><h2 id="725cdef1-9596-4a82-b0e9-5d8b4a7f6b41" class="">Decoding Neural Activity</h2><p id="d03cf701-c4ac-4d77-94ac-5f00b75f4f38" class="">
+</p><p id="ed5d960b-3cf3-40bc-8f37-7996c44f27bb" class="">We build a simple decoder that is able to classify images from some properties of neuronal data. Here we will build a Support Vector Machine to do a classification task. The idea is to use the &quot;natural scenes&quot; stimuli and try to recognize which photo was presented to the mouse as a function of the spiking activity. </p><p id="234940b5-75f5-401f-8551-dcafbf34512b" class="">We download the images of natural scenes </p><p id="0ece4dfb-7bee-4c24-a464-a1a78d63c4fe" class="">
+</p><h3 id="ac081d39-9d3c-415d-8d43-118d8fe9ebd9" class="">Decoding</h3><p id="cc99a496-f460-46d7-8444-3af226a83f91" class="">
+</p><p id="6cc779c7-6bee-4edf-906d-2539db680152" class="">Let&#x27;s, however, focus on the images. We expect each neuron to respond to different kind of stimuli (different angles, luminosity...) in different places of the screen. Hence, the firing rate of the measured neurons should correlate with each image.  An extremely naive decoding scheme is to just use the number of spikes that each neuron had during each presentation.</p><p id="17ddbacc-c519-47be-843b-6f906cd08d85" class="">We can construct a table using presentation id as rows and neurons as columns, so each cell contains the neuron&#x27;s number of spikes while the image was shown on the screen, and feed this to a classifier. </p><p id="d2b85c46-11af-41fe-8e7f-956924c2601b" class="">
+</p><p id="bf3b594c-b75d-4acb-9fa9-626612141c43" class="">Next: Sklearn and svm</p><p id="6e49c535-6de6-4ce2-9761-d4247365bddd" class="">Now we import Scikit-Learn module and use its built-int Support Vector Machine. Scikit does separate the data into training and test and it evaluates it. We just need to set up what is the target to learn, which is the <code>frame</code> property of the presentation (tells us the index of the image used). </p><p id="20dcf188-e2c5-4188-ad20-cbe01cdab3e3" class="">
+</p><p id="f2b09017-b406-4cb8-b07e-ba6afbdf2564" class="">Code is pretty straightforward. Set up the labels, set up the data, training and testing, initialize classifier, use cross validation. Use confusion matrix and accuracy. We also check the top 5 best and top 5 worst classified images.</p><p id="20748646-3309-4790-b8c9-11eabd6af64b" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
