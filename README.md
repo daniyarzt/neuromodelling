@@ -25,3 +25,6 @@ The AllenSDK contains code for accessing across-session (project-level) metadata
 Professor provided example where they classify the label of the image stimuli, using spike data. During the stimuli, for each neuron the aggregate how many times it fired and use this vectors to classify the type of the image presented. 
 
 We can extend this idea further, and take the spike data after the stimuli was shown and see if it is useful in classification. This way we see if signal remain 'in memory' and for how long. We could also see if there is a shift in brain region that contain the useful signal. 
+
+### group classification
+Certain group of pictures (predators for example or food) might be memorized in different zones of the brain (due to stress or pleasure they create) and we can show this in some way maybe
