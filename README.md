@@ -28,3 +28,9 @@ We can extend this idea further, and take the spike data after the stimuli was s
 
 ### group classification
 Certain group of pictures (predators for example or food) might be memorized in different zones of the brain (due to stress or pleasure they create) and we can show this in some way maybe
+
+### Checking for temporal effect in overall experiment
+We can do the following experiment: split the data during stimulus(natural images) in half with certain time barrier. Build classifiers in two halves. If there is a change in accuracy, there could be several explanations: 
+- Mice Learns the images therefore the spike data contains a better signal for decoding. 
+- Mice Gets tired from watching images. 
+- Mice Learns the images so there is less neural activity on the following stimulus presentations. 
